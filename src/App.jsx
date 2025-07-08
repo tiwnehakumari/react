@@ -25,7 +25,7 @@ function App(){
     <div>
       <Form/>
     </div>
-    
+    <hr/>
     <div>
 
     <OnclickProps name={student}/>
