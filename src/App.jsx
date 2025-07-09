@@ -5,12 +5,13 @@ import State from "./State"
 import Toggle, {DisplayCount} from "./ToggleDispkay"
 import User ,{Userpar,UseCollegerpar,College,OnclickProps} from "./Propsdata"
 import Jsxprops from './passjsxwithprops'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Form from "./Form"
 import Skills ,{RadioClick}from "./Checkbox"
 import { createBrowserRouter } from "react-router-dom"
 import DataGet from "./Lopping"
 import UserRe from "./ReuseCom"
+import Clock from "./Clock"
 
 function App(){
   let username="Swati";
@@ -43,9 +44,18 @@ function App(){
   let clg=["MCA","BCA","BSCIT","BSC"]
   const [student,useStudent]=useState("bhaskar")
   
+  const [color,SetColor]=useState('Red')
   return(
     <>
+    
     <div>
+    <select defaultValue={'red'} onChange={(event)=>SetColor(event.target.value)}>
+      <option value={"red"} >red</option>
+      <option value={"green"} >green</option>
+      <option value={"blue"} >blue</option>
+    </select>
+    <Clock color={color}/>
+    <hr/>
     {UseObj.map((user)=>{
       return(
       <div key={user.Id}>
