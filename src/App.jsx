@@ -7,6 +7,9 @@ import User ,{Userpar,UseCollegerpar,College,OnclickProps} from "./Propsdata"
 import Jsxprops from './passjsxwithprops'
 import { useState } from "react"
 import Form from "./Form"
+import Skills ,{RadioClick}from "./Checkbox"
+import { createBrowserRouter } from "react-router-dom"
+
 function App(){
   let username="Swati";
   let email="abc@gmail.com"
@@ -23,6 +26,10 @@ function App(){
   return(
     <>
     <div>
+    <RadioClick/>
+    <hr/>
+    <Skills/>
+    <hr/>
       <Form/>
     </div>
     <hr/>

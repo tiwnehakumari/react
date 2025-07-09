@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Submit from "./ControlComponent"
 
+
 function Form(){
     const [val,setVal]=useState("")
     return(
