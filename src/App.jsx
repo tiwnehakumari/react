@@ -9,6 +9,8 @@ import { useState } from "react"
 import Form from "./Form"
 import Skills ,{RadioClick}from "./Checkbox"
 import { createBrowserRouter } from "react-router-dom"
+import DataGet from "./Lopping"
+import UserRe from "./ReuseCom"
 
 function App(){
   let username="Swati";
@@ -19,6 +21,24 @@ function App(){
     location:"Noida",
     stream:"MCA"
   }
+   let UseObj=[{
+        Id:1,
+        Name:"Shardauniversity",
+        Email:"Noida",
+        Age:"MCA"
+      },
+      {
+        Id:2,
+        Name:"AN college",
+        Email:"Delhi",
+        Age:"BCA"
+      },{
+        Id:3,
+        Name:"BN college",
+        Email:"Gurugram",
+        Age:"RCa"
+      }
+]
   //props with arr
   let clg=["MCA","BCA","BSCIT","BSC"]
   const [student,useStudent]=useState("bhaskar")
@@ -26,6 +46,19 @@ function App(){
   return(
     <>
     <div>
+    {UseObj.map((user)=>{
+      return(
+      <div key={user.Id}>
+      <UserRe data={user}/>
+      </div>
+      )
+      
+
+    })}
+    
+    <hr/>
+    <DataGet/>
+    <hr/>
     <RadioClick/>
     <hr/>
     <Skills/>
