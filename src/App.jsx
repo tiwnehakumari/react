@@ -12,7 +12,7 @@ import { createBrowserRouter } from "react-router-dom"
 import DataGet from "./Lopping"
 import UserRe from "./ReuseCom"
 import Clock from "./Clock"
-
+import CollegeNew from "./Nestedloop"
 function App(){
   let username="Swati";
   let email="abc@gmail.com"
@@ -40,6 +40,75 @@ function App(){
         Age:"RCa"
       }
 ]
+let collgeObj=[{
+  name:"RB d collge",
+  city:"jaipur",
+  website:"https::abc.com",
+  student:[{
+        Id:1,
+        Name:"Shardauniversity",
+        Email:"Noida",
+        Age:"MCA"
+      },
+      {
+        Id:2,
+        Name:"AN college",
+        Email:"Delhi",
+        Age:"BCA"
+      },{
+        Id:3,
+        Name:"BN college",
+        Email:"Gurugram",
+        Age:"RCa"
+      }
+      ]
+    },
+    {
+  name:"An collge",
+  city:"jaipur",
+  website:"https::abc.com",
+  student:[{
+        Id:1,
+        Name:"Shardauniversity",
+        Email:"Noida",
+        Age:"MCA"
+      },
+      {
+        Id:2,
+        Name:"AN college",
+        Email:"Delhi",
+        Age:"BCA"
+      },{
+        Id:3,
+        Name:"BN college",
+        Email:"Gurugram",
+        Age:"RCa"
+      }
+      ]
+    },{
+  name:"Sharda collge",
+  city:"jaipur",
+  website:"https::abc.com",
+  student:[{
+        Id:1,
+        Name:"Shardauniversity",
+        Email:"Noida",
+        Age:"MCA"
+      },
+      {
+        Id:2,
+        Name:"AN college",
+        Email:"Delhi",
+        Age:"BCA"
+      },{
+        Id:3,
+        Name:"BN college",
+        Email:"Gurugram",
+        Age:"RCa"
+      }
+      ]
+    }
+]
   //props with arr
   let clg=["MCA","BCA","BSCIT","BSC"]
   const [student,useStudent]=useState("bhaskar")
@@ -47,6 +116,19 @@ function App(){
   const [color,SetColor]=useState('Red')
   return(
     <>
+    <div>
+  <h1>Nested looping</h1>
+  {collgeObj.map((clg,index)=>{
+    return(
+      <div key={index}><CollegeNew college={clg}/></div>
+      
+    )
+    })}
+  </div>
+  
+
+
+    {/* clock code */}
     
     <div>
     <select defaultValue={'red'} onChange={(event)=>SetColor(event.target.value)}>
